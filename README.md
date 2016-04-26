@@ -1,2 +1,23 @@
-# apa-data-requester-client
-A simple single-page web app that enables Australian citizens to request data held about them under the Australian Privacy Act by the Australian federal Police.
+# APA Data Requester (Client)
+
+
+## Development
+
+Install [`webpack`]() and the `webpack-dev-server`.
+
+```sh
+npm install -g webpack webpack-dev-server
+```
+
+### To run the dev server
+
+```sh
+webpack-dev-server
+```
+
+### To test
+
+```sh
+npm test
+```
+

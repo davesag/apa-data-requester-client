@@ -1,0 +1,46 @@
+{
+  "name": "apa-data-requester-client",
+  "version": "0.0.1",
+  "description": "A simple single-page web app that enables Australian citizens to request data held about them under the Australian Privacy Act by the Australian federal Police",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js \"test/**/*@(.js|.jsx)\"",
+    "test:watch": "npm run test -- --watch"
+  },
+  "keywords": [
+    "react",
+    "redux",
+    "privacy"
+  ],
+  "author": "Dave Sag <davesag@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "autoprefixer-loader": "^3.2.0",
+    "babel-core": "^6.7.7",
+    "babel-loader": "^6.2.4",
+    "babel-preset-es2015": "^6.6.0",
+    "babel-preset-react": "^6.5.0",
+    "chai": "^3.5.0",
+    "chai-immutable": "^1.5.4",
+    "css-loader": "^0.23.1",
+    "jsdom": "^8.4.0",
+    "mocha": "^2.4.5",
+    "react-hot-loader": "^1.3.0",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.13.0",
+    "webpack-dev-server": "^1.14.1"
+  },
+  "babel": {
+    "presets": [
+      "es2015",
+      "react"
+    ]
+  },
+  "dependencies": {
+    "classnames": "^2.2.4",
+    "immutable": "^3.8.1",
+    "react": "^15.0.1",
+    "react-addons-test-utils": "^15.0.1",
+    "react-dom": "^15.0.1"
+  }
+}
