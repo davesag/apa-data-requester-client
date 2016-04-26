@@ -3,6 +3,10 @@
   "version": "0.0.1",
   "description": "A simple single-page web app that enables Australian citizens to request data held about them under the Australian Privacy Act by the Australian federal Police",
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davesag/apa-data-requester-client.git"
+  },
   "scripts": {
     "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js \"test/**/*@(.js|.jsx)\"",
     "test:watch": "npm run test -- --watch"

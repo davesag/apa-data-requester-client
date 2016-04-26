@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Voting from './components/TextBlock';
+import TextBlock from './components/TextBlock';
 
 const lines = [
   "Just some example text."
