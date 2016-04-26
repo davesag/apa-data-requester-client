@@ -41,7 +41,7 @@ This is, at heart, a toy project, whose aim is to teach myself to use Redux and 
 
 * [NodeJS 5.1] or better. `brew install node` or even better use [NVM](https://github.com/creationix/nvm) and `nvm install 5.1`
 
-Install [`webpack`]() and the `webpack-dev-server`.
+Install [`webpack`](https://webpack.github.io) and the `webpack-dev-server`.
 
 ```sh
 npm install -g webpack webpack-dev-server
