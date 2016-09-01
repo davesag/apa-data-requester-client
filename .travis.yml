@@ -1,3 +1,21 @@
 language: node_js
+
 node_js:
-  - "5.1"
+  - "6.5.0"
+
+env:
+  - CXX=g++-4.8
+
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      - g++-4.8
+
+cache:
+  directories:
+    - node_modules
+
+after_failure:
+  - tail -n 1000 /home/travis/build/iit-exo/contract-ui/npm-debug.log
