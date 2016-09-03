@@ -8,11 +8,17 @@ module.exports = {
     './src/index.jsx'
   ],
   module: {
-    loaders: [{
-      test: /\.jsx?$/,
-      exclude: /node_modules/,
-      loader: 'react-hot!babel'
-    }]
+    loaders: [
+      {
+        test: /\.jsx?$/,
+        exclude: /node_modules/,
+        loader: 'react-hot!babel'
+      },
+      {
+        test: /\.css$/,
+        loader: "style-loader!css-loader"
+      },
+    ]
   },
   resolve: {
     extensions: ['', '.js', '.jsx']
@@ -27,6 +33,7 @@ module.exports = {
     hot: true
   },
   plugins: [
+    new webpack.optimize.CommonsChunkPlugin('common.js'),
     new webpack.HotModuleReplacementPlugin(),
   ]
 };

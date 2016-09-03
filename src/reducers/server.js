@@ -1,16 +1,14 @@
-import * as actions from './actions';
+import * as Actions from '../actions'
 
 const INITIAL_STATE = {
-  connectionCount: 0,
-  requesting: false,
-  response: null
-};
+  connectionCount: 0
+}
 
 const reducer = function(state = INITIAL_STATE, action) {
   if (!action) return state;
 
   switch (action.type) {
-    case actions.SERVER_STATE_CHANGED: {
+    case Actions.SERVER_STATE_CHANGED: {
       const serverState = action.payload;
       return {
         ...state,
@@ -23,7 +21,4 @@ const reducer = function(state = INITIAL_STATE, action) {
   }
 }
 
-module.exports = {
-  reducer,
-  INITIAL_STATE
-};
+module.exports = reducer;

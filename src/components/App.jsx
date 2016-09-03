@@ -1,13 +1,11 @@
 import React from 'react';
 import {connect} from 'react-redux'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import {changedTab} from '../actions';
 
-const App = React.createClass({
+import PrivacyDataForm from './PrivacyDataForm';
 
-  _tabChanged: (index, prevIndex) => {
-    if (index === prevIndex) return false;
-    console.log('Tab changed to:', index, "from", prevIndex);
-  },
+export const App = React.createClass({
 
   render: function() {
     if (!this.props.ready) return (
@@ -15,7 +13,7 @@ const App = React.createClass({
     );
 
     const tabs = (
-      <Tabs onSelect={this._tabChanged}>
+      <Tabs onSelect={this.props.tabChanged} selectedIndex={this.props.selectedTab}>
         <TabList>
           <Tab>Introduction</Tab>
           <Tab>I’m a Journalist</Tab>
@@ -24,7 +22,8 @@ const App = React.createClass({
 
         <TabPanel>
           <div id='introduction'>
-
+            <p>The <a href='https://www.oaic.gov.au/privacy-law/privacy-act/'>Australian Privacy Act</a> allows Australian citizens to access personal information held about themselves by Australian companies and government agencies including the Australian Federal Police. You can request documents such as criminal records, investigation records and other data (with a few exceptions). To access these documents you simply lodge a `Privacy Request` with the Australian Federal Police. This can be done by emailing <a href='mailto:privacy@afp.gov.au'>privacy@afp.gov.au</a> with the following information:</p>
+            <PrivacyDataForm />
           </div>
         </TabPanel>
 
@@ -51,9 +50,20 @@ const App = React.createClass({
 });
 
 const mapStateToProps = (state, ownProps) => {
+  console.log('state', state);
   return {
-    ready: !!state.connectionCount
+    ready: !!state.server.connectionCount,
+    selectedTab: state.ui.selectedTab || 0
   }
 };
 
-module.exports = connect(mapStateToProps)(App);
+const mapDispatchToProps = (dispatch) => {
+  return {
+    tabChanged: (index, prevIndex) => {
+      if (index === prevIndex) return;
+      dispatch(changedTab(index, prevIndex));
+    }
+  }
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);

@@ -3,7 +3,7 @@ import io from 'socket.io-client';
 import {socketUrl} from './config';
 
 import socketMiddleware     from './socketMiddleware';
-import {reducer}            from './reducer';
+import reducer              from './reducers';
 import {serverStateChanged} from './actions';
 
 console.log(`Connecting to ${socketUrl}`);

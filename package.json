@@ -52,8 +52,10 @@
   "dependencies": {
     "classnames": "^2.2.4",
     "immutable": "^3.8.1",
+    "moment": "^2.14.1",
     "react": "^15.0.1",
     "react-addons-test-utils": "^15.0.1",
+    "react-datepicker": "^0.29.0",
     "react-dom": "^15.0.1",
     "react-modal": "^1.4.0",
     "react-redux": "^4.4.5",
