@@ -1,12 +1,15 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import TextBlock from './components/TextBlock';
+import React      from 'react';
+import ReactDOM   from 'react-dom';
+import {Provider} from 'react-redux';
 
-const lines = [
-  "Just some example text."
-];
+import store from './store';
+import App   from './components/App';
+
+const appElement = document.getElementById('app');
 
 ReactDOM.render(
-  <TextBlock lines={lines} />,
-  document.getElementById('app')
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  appElement
 );
